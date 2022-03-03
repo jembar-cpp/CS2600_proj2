@@ -42,3 +42,14 @@
  * 
  * TODO: Functions in the files should return total expenses and allowable expenses for everything
  */
+#include "travelTime.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Testing fuctions
+    int i = getNumDays();
+    printf("%d", i);
+    return 0;
+}
