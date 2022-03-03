@@ -49,7 +49,9 @@
 
 int main() {
     // Testing fuctions
-    int i = getDepartureTime();
-    printf("%d", i);
+    int num = getNumDays();
+    int dep = getDepartureTime();
+    int arr = getArrivalTime(dep, num);
+    printf("%d, %d, %d", num, dep, arr);
     return 0;
 }

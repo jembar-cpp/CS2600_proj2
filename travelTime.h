@@ -3,5 +3,6 @@
 
 int getNumDays();
 int getDepartureTime();
+int getArrivalTime(int departureTime, int numDays);
 
 #endif
