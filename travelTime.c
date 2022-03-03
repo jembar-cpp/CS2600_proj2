@@ -43,3 +43,15 @@ int getNumDays() {
     }
     return num;
 }
+
+/**
+ * Returns the departure time for the trip.
+ * Time is in 24-hour format. Examples of valid input: "7:30", "15:00"
+ * Returns an integer representing the 24-hour time. Examples: "730", "1500"
+ * If the user enters an invalid input, the user is prompted again.
+ * 
+ * @return int: the departure time
+ */
+int getDepartureTime() {
+    // TODO
+}
