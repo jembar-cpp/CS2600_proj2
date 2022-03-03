@@ -53,5 +53,26 @@ int getNumDays() {
  * @return int: the departure time
  */
 int getDepartureTime() {
-    // TODO
+    char input[20];
+    char *ptr;
+    int hours, minutes;
+    
+    while(1) { // loop until user enters a valid input
+        printf("Enter the departure time (24-hour format): ");
+        fgets(input, 20, stdin); // get input from user
+        fflush(stdin);
+        if (strlen(input) > 0 && input[strlen(input) - 1] == '\n') { // remove newline from input, if exists
+            input[strlen(input) - 1] = '\0';
+        }
+        hours = strtol(input, &ptr, 10); // get hour part, store rest in ptr
+
+        if(ptr[0] == ':') { // check it's a valid time
+            minutes = strtol(ptr + 1, &ptr, 10); // get minutes part
+            if(hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59) { // times are within range
+                return hours*100 + minutes;
+            }
+        }
+        // Input was invlid
+        printf("Invalid input: please enter a valid 24-hour time (7:30, 15:00)\n");
+    }
 }

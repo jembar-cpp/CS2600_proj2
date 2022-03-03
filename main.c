@@ -49,7 +49,7 @@
 
 int main() {
     // Testing fuctions
-    int i = getNumDays();
+    int i = getDepartureTime();
     printf("%d", i);
     return 0;
 }
