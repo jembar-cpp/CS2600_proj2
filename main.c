@@ -48,10 +48,6 @@
 #include <stdlib.h>
 
 int main() {
-    // Testing fuctions
-    int num = getNumDays();
-    int dep = getDepartureTime();
-    int arr = getArrivalTime(dep, num);
-    printf("%d, %d, %d", num, dep, arr);
+    // TODO
     return 0;
 }
