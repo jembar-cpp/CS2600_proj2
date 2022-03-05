@@ -43,11 +43,16 @@
  * TODO: Functions in the files should return total expenses and allowable expenses for everything
  */
 #include "travelTime.h"
+#include "mealExpenses.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    // TODO
+    // Testing mealExpenses functions
+    int totalMealCost = 0;
+    int allowedMealCost = 0;
+    calculateMealCosts(3,900,1200,&totalMealCost,&allowedMealCost);
+    printf("%d,%d",totalMealCost,allowedMealCost);
     return 0;
 }
