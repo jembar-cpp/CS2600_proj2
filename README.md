@@ -1,7 +1,7 @@
 # CS2600 - Project 2
 Travel Expenses - Group project
 
-How to complile multiple files together:
+**How to complile multiple files together:**
 
 Compile both files individually first:
 
@@ -16,7 +16,7 @@ gcc -o program travelTime.o main.o
 Then run executable with .\program.exe
 
 
-How to run unit tests with Unity:
+**How to run unit tests with Unity:**
 
 After writing unit test, compile both together:
 
