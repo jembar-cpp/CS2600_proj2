@@ -30,8 +30,8 @@
  * @param totalMealCost: the total meal cost, modified on return
  * @param allowableMealCost: the allowable meal cost, modified on return
  */
-void calculateMealCosts(int numDays, int departureTime, int arrivalTime, int *totalMealCost, int *allowableMealCost) {
-    int total = 0, allowable = 0, cost;
+void calculateMealCosts(int numDays, int departureTime, int arrivalTime, float *totalMealCost, float *allowableMealCost) {
+    float total = 0, allowable = 0, cost;
 
     for(int day = 1; day <= numDays; day++) { // loop through each day
         if(day == 1) { // check the first day
@@ -93,7 +93,7 @@ void calculateMealCosts(int numDays, int departureTime, int arrivalTime, int *to
  * @param day: the current day
  * @return the cost entered by the user
  */
-int promptBreakfast(int day) {
+float promptBreakfast(int day) {
     printf("Enter the breakfast cost for day %d: ", day);
     return promptCost();
 }
@@ -105,7 +105,7 @@ int promptBreakfast(int day) {
  * @param day: the current day
  * @return the cost entered by the user
  */
-int promptLunch(int day) {
+float promptLunch(int day) {
     printf("Enter the lunch cost for day %d: ", day);
     return promptCost();
 }
@@ -117,7 +117,7 @@ int promptLunch(int day) {
  * @param day: the current day
  * @return the cost entered by the user
  */
-int promptDinner(int day) {
+float promptDinner(int day) {
     printf("Enter the dinner cost for day %d: ", day);
     return promptCost();
 }
@@ -127,20 +127,20 @@ int promptDinner(int day) {
  * 
  * @return the cost entered by the user
  */
-int promptCost() {
+float promptCost() {
     char input[20];
     char *ptr;
-    int cost;
+    float cost;
     while(1) { // loop until a valid number is entered
         fgets(input, 20, stdin); // get input from user
         fflush(stdin);
         if (strlen(input) > 0 && input[strlen(input) - 1] == '\n') { // remove newline from input, if exists
             input[strlen(input) - 1] = '\0';
         }
-        cost = strtol(input, &ptr, 10); // get numerical part, store rest in ptr
+        cost = strtof(input, &ptr); // get numerical part, store rest in ptr
 
         if(ptr[0] == '$') { // user put a dollar sign
-            cost = strtol(ptr + 1, &ptr, 10); // get the cost without the dollar sign
+            cost = strtof(ptr + 1, &ptr); // get the cost without the dollar sign
         }
 
         if(strcmp(ptr, "") == 0 && cost >= 0) { // input is valid, return it
