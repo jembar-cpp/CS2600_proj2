@@ -49,11 +49,6 @@
 #include <stdlib.h>
 
 int main() {
-    // Testing mealExpenses functions
-    // TODO: Unit testing
-    float totalMealCost = 0;
-    float allowedMealCost = 0;
-    calculateMealCosts(3,900,1200,&totalMealCost,&allowedMealCost);
-    printf("%f,%f",totalMealCost,allowedMealCost);
+    // TODO
     return 0;
 }
