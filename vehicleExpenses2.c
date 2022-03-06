@@ -100,7 +100,7 @@ void getFees(float *totalFeeCost, float *owedFeeCost)
 
 // Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getTaxi(int *totalTaxiCost, int *owedTaxiCost)
+void getTaxi(float *totalTaxiCost, float *owedTaxiCost)
 {
     float tTotal, tOwed, days;
 
