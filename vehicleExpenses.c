@@ -21,9 +21,32 @@ float airfare, rental, miles, fees, taxi;
 printf("Total Spent on Airfare: $");
 scanf("%f",&airfare);
 
+printf("Total Spent on Car Rental: $");
+scanf("%f",&rental);
+
+printf("Total Miles Driven: $");
+scanf("%f",&miles);
+
+printf("Total Spent on Parking: $");
+scanf("%f",&fees);
+
+printf("Total Spent on Taxi': $");
+scanf("%f",&taxi);
+
 //while(airfare < 0 )
   // printf("Please provide a positive value.");
   
+float mTotal;
+
+mTotal = miles * 0.27; 
+
+printf("-------------------------------------------");
 
 printf("Total Airfare: $%.2f",airfare);
+printf("Total Car Rental: $%.2f",rental);
+printf("Total Miles Cost: $%.2f",mTotal);
+printf("Total Parking Fees: $%.2f",fees);
+printf("Total Taxi Cost: $%.2f",taxi);
+
 return 0;
+}
