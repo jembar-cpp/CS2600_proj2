@@ -48,7 +48,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Calls all the functions to calculate total expenses
 int main() {
-    // TODO
+    float totalCost;
+    float allowedCost;
+    float totalMealCost = 0;
+    float allowedMealCost = 0;
+    // other variable definitions...
+    
+    // TODO: functions should be called in this order
+    int numDays = getNumDays();
+    int departureTime = getDepartureTime();
+    int arrivalTime = getArrivalTime(departureTime, numDays);
+    // get amount of any round-trip airfare
+    // get amount of any car rentals
+    // get amount of miles driven in private vehicle
+    // get parking fees
+    // get taxi fees
+    // get conference and seminar registration fees
+    // get hotel expenses
+    calculateMealCosts(numDays,departureTime,arrivalTime,&totalMealCost,&allowedMealCost);
+    totalCost += totalMealCost;
+    allowedCost += allowedMealCost;
+
+    // Print the results
+
     return 0;
 }
