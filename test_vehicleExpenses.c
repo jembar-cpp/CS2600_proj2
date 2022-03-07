@@ -12,19 +12,19 @@
 
 #include <stdio.h>
 #include "unity/src/unity.h"
-#include "vehicleExpenses.h"
 
 void setUp() {}
 
 void tearDown() {}
 // Asking User to input a variable for Airfare and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void testGetAirfare(float airfare)
+void testGetAirfare()
 {
+    float airfare = 100; // hard coded input
+
     do
     {
         printf("Total Spent on Airfare: $");
-        float airfare = 100; // hard coded input
         printf("%.2f", airfare);
 
         if (airfare < 0)
@@ -37,12 +37,13 @@ void testGetAirfare(float airfare)
 
 // Asking User to input a variable for Car Rental and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void testGetRental(float rental)
+void testGetRental()
 {
+    float rental = 100; // hard coded input
+
     do
     {
         printf("Total Spent on Rental: $");
-        float rental = 100; // hard coded input
         printf("%.2f", rental);
 
         if (rental < 0)
@@ -55,21 +56,23 @@ void testGetRental(float rental)
 
 // Asking User to input a variable for Miles and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void testGetMiles(float miles, float tMiles)
+void testGetMiles()
 {
+    float miles = 150;
+    float tMiles; // hard coded input
     do
     {
         printf("Total Miles Driven: $");
-        float miles = 150; // hard coded input
+
         printf("%.2f", miles);
 
         if (miles < 0)
             printf("Please enter a Positive Number!\n");
 
     } while (miles < 0);
-    {
-        tMiles = miles * 0.27;
-    }
+
+    tMiles = miles * 0.27;
+
     TEST_ASSERT_EQUAL(tMiles, 40.5);
 }
 
