@@ -66,7 +66,7 @@ float getMiles(float miles, float tMiles)
     return tMiles;
 }
 
-/* // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
+// Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
 void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
 {
@@ -133,4 +133,3 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
     *totalTaxiCost = tTotal;
     *owedTaxiCost = tOwed;
 }
- */
