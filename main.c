@@ -67,6 +67,7 @@ int main() {
     
     // TODO: functions should be called in this order
     int numDays = getNumDays();
+    allowedCost += numDays * ALLOWED_COST_PER_DAY; // set static allowed cost based on number of days
     int departureTime = getDepartureTime();
     int arrivalTime = getArrivalTime(departureTime, numDays);
     // get amount of any round-trip airfare

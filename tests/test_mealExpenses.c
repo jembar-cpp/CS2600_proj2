@@ -94,7 +94,6 @@ void testPromptCost() {
 }
 
 void testCalculateMealCosts() {
-    freopen("test_mealExpenses_input/cost.txt", "r", stdin);
     float totalMealCost = 0;
     float allowedMealCost = 0;
     modifiedCalculateMealCosts(3,900,1200,&totalMealCost,&allowedMealCost);
