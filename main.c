@@ -1,8 +1,9 @@
 /** main.c
  * CS 2600 Project 2 (Group) - Travel Expenses
  * 
- * OUTLINE:
- * main.c: accepts input, calls functions from other files, prints output
+ * Calculates and displays the total travel expenses of a businessperson on a trip.
+ * 
+ * File structure:
  * 
  * travelTime.c: asks for and returns:
  *  - the number of days spent on the trip
@@ -12,7 +13,7 @@
  * vehicleExpenses.c: asks for and returns:
  *  - total amount spent on round-trip airfare
  *  - total amount of any car rentals
- *  - miles driven in a private vehicle (returns amount: miles * $0.27)
+ *  - miles driven in a private vehicle
  *  - parking fees
  *  - taxi expenses
  * 
@@ -31,22 +32,7 @@
  *      - last day: dinner allowed if time of arrival is after 7PM
  *  - calculate the excess expenses which must be paid:
  *    - company allows $9 for breakfast, $12 for lunch, and $16 for dinner
- *    - returned values should be the total expenses, allowable expenses, and excess expenses
  * 
- * Input validation:
- *  - No negative numbers
- *  - Number of days need to be 1 or greater
- *  - Times for departure and arrival must be valid
- * 
- * Allowed expenses:
- *  - Parking: $6 / day
- *  - Taxi fees: $10 / day for each day a taxi was used
- *  - Lodging: $90 / day
- *  - Allowable meals: breakfast / lunch / dinner, $9 / $12, $16
- * 
- * Assuming allowed costs are compounded:
- *  - Static allowed cost: $96 / day
- *  - Taxi / meals: only when applicable 
  */
 #include "travelTime.h"
 #include "mealExpenses.h"
