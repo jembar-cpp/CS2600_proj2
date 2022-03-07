@@ -68,19 +68,18 @@ float getMiles(float miles, float tMiles)
 
 // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
+float getFees(float totalFeeCost, float days)
 {
-    float total, owed, days, allowed;
 
     do
     {
         printf("Total Spent on Parking: $");
-        scanf("%f", &total);
+        scanf("%f", &totalFeeCost);
 
-        if (total < 0)
+        if (totalFeeCost < 0)
             printf("Please enter a Positive Number!\n");
 
-    } while (total < 0);
+    } while (totalFeeCost < 0);
 
     do
     {
@@ -92,17 +91,15 @@ void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
 
     } while (days < 0);
 
-    allowed = days * 6;
-    owed = total - (6 * days);
+    //  allowed = days * 6;
+    //  owed = total - (6 * days);
 
-    *totalFeeAllowed = allowed;
-    *totalFeeCost = total;
-    *owedFeeCost = owed;
+    return totalFeeCost;
 }
 
 // Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
+void getTaxi(float *totalTaxiCost, float *totalTaxiAllowed)
 {
     float tTotal, tOwed, days, tAllowed;
 
@@ -127,9 +124,7 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
     } while (days < 0);
 
     tAllowed = days * 10;
-    tOwed = tTotal - (10 * days);
 
     *totalTaxiAllowed = tAllowed;
     *totalTaxiCost = tTotal;
-    *owedTaxiCost = tOwed;
 }
