@@ -8,12 +8,12 @@
 #include <stdio.h>
 
 
-void getHotelExpenses(float hotelFee, int nights, float semFee)
+void getHotelExpenses(float hotelFee, int nights)
 {
 
     // Declare variables needed
     float totalHotelExpenses;
-    float nights, hotelFee, semFee, totalHotelCost;
+    float nights, hotelFee, totalHotelCost;
     float allowedHotelCost;
     float allowedPerNight = 90;
     // Calculates costs of both allowed total and total businessperson spent
@@ -24,14 +24,21 @@ void getHotelExpenses(float hotelFee, int nights, float semFee)
     // Checks for hotelFee only, so rest of calcs are easier to check 
     if (hotelFee <= 89.99)
     {
-        totalHotelExpenses = (allowedHotelCost - totalHotelCost) + semFee;
+        totalHotelExpenses = (allowedHotelCost - totalHotelCost);
     }
     else if (hotelFee >= 90.99)
     {
-        totalHotelExpenses = fabs(totalHotelCost - allowedHotelCost) + semFee;
+        totalHotelExpenses = fabs(totalHotelCost - allowedHotelCost);
     }
     else
     {  
-        totalHotelExpenses = semFee;
+        totalHotelExpenses = 0;
     }
+
 }
+
+void getSemFee(float semFee)
+{
+    float totalSemFee = semFee;
+}
+
