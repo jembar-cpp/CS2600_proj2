@@ -11,50 +11,57 @@
  */
 
 #include <stdio.h>
+#include "unity/src/unity.h"
 #include "vehicleExpenses.h"
 
+void setUp() {}
+
+void tearDown() {}
 // Asking User to input a variable for Airfare and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getAirfare(float airfare)
+void testGetAirfare(float airfare)
 {
     do
     {
         printf("Total Spent on Airfare: $");
-        scanf("%f", &airfare);
+        float airfare = 100; // hard coded input
+        printf("%.2f", airfare);
 
         if (airfare < 0)
             printf("Please enter a Positive Number!\n");
 
     } while (airfare < 0);
 
-    return airfare;
+    TEST_ASSERT_EQUAL(airfare, 100);
 }
 
 // Asking User to input a variable for Car Rental and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getRental(float rental)
+void testGetRental(float rental)
 {
     do
     {
         printf("Total Spent on Rental: $");
-        scanf("%f", &rental);
+        float rental = 100; // hard coded input
+        printf("%.2f", rental);
 
         if (rental < 0)
             printf("Please enter a Positive Number!\n");
 
     } while (rental < 0);
 
-    return rental;
+    TEST_ASSERT_EQUAL(rental, 300);
 }
 
 // Asking User to input a variable for Miles and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getMiles(float miles, float tMiles)
+void testGetMiles(float miles, float tMiles)
 {
     do
     {
         printf("Total Miles Driven: $");
-        scanf("%f", &miles);
+        float miles = 150; // hard coded input
+        printf("%.2f", miles);
 
         if (miles < 0)
             printf("Please enter a Positive Number!\n");
@@ -63,7 +70,7 @@ float getMiles(float miles, float tMiles)
     {
         tMiles = miles * 0.27;
     }
-    return tMiles;
+    TEST_ASSERT_EQUAL(tMiles, 40.5);
 }
 
 /* // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
@@ -108,7 +115,7 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
 
     do
     {
-        printf("Total Spent on Taxi: $");
+        printf("Total Spent on Parking: $");
         scanf("%f", &tTotal);
 
         if (tTotal < 0)
@@ -118,7 +125,7 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
 
     do
     {
-        printf("Total Days Taxi was used:");
+        printf("Total Days on Parking:");
         scanf("%f", &days);
 
         if (days < 0)
@@ -132,5 +139,12 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
     *totalTaxiAllowed = tAllowed;
     *totalTaxiCost = tTotal;
     *owedTaxiCost = tOwed;
+} */
+int main()
+{
+    UNITY_BEGIN();
+    RUN_TEST(testGetAirfare);
+    RUN_TEST(testGetRental);
+    RUN_TEST(testGetMiles);
+    return UNITY_END();
 }
- */
