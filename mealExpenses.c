@@ -38,62 +38,62 @@ void calculateMealCosts(int numDays, int departureTime, int arrivalTime, float *
             if(departureTime < 700 && arrivalTime > 800) { // breakfast is allowed
                 cost = promptBreakfast(day);
                 total += cost;
-                allowable += (cost > 9) ? 9 : cost;
+                allowable += 9;
             }
             if (departureTime < 1200 && arrivalTime > 1300) { // lunch is allowed
                 cost = promptLunch(day);
                 total += cost;
-                allowable += (cost > 12) ? 12 : cost;
+                allowable += 12;
             }
             if(departureTime < 1800 && arrivalTime > 1900) { // dinner is allowed
                 cost = promptDinner(day);
                 total += cost;
-                allowable += (cost > 16) ? 16 : cost;
+                allowable += 16;
             }
         }
         else if(day == 1) { // check the first day
             if(departureTime < 700) { // breakfast is allowed
                 cost = promptBreakfast(day);
                 total += cost;
-                allowable += (cost > 9) ? 9 : cost;
+                allowable += 9;
             }
             if(departureTime < 1200) { // lunch is allowed
                 cost = promptLunch(day);
                 total += cost;
-                allowable += (cost > 12) ? 12 : cost;
+                allowable += 12;
             }
             if (departureTime < 1800) { // dinner is allowed
                 cost = promptDinner(day);
                 total += cost;
-                allowable += (cost > 16) ? 16 : cost;
+                allowable += 16;
             }
         }
         else if(day != numDays) { // normal day, check all meals
             cost = promptBreakfast(day);
             total += cost;
-            allowable += (cost > 9) ? 9 : cost;
+            allowable += 9;
             cost = promptLunch(day);
             total += cost;
-            allowable += (cost > 12) ? 12 : cost;
+            allowable += 12;
             cost = promptDinner(day);
             total += cost;
-            allowable += (cost > 16) ? 16 : cost;
+            allowable += 16;
         }
         else { // check the last day
             if(arrivalTime > 800) { // breakfast is allowed
                 cost = promptBreakfast(day);
                 total += cost;
-                allowable += (cost > 9) ? 9 : cost;
+                allowable += 9;
             }
             if(arrivalTime > 1300) { // lunch is allowed
                 cost = promptLunch(day);
                 total += cost;
-                allowable += (cost > 12) ? 12 : cost;
+                allowable += 12;
             }
             if (arrivalTime > 1900) { // dinner is allowed
                 cost = promptDinner(day);
                 total += cost;
-                allowable += (cost > 16) ? 16 : cost;
+                allowable += 16;
             }
         }
     }

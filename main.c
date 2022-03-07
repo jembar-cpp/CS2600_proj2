@@ -2,8 +2,6 @@
  * CS 2600 Project 2 (Group) - Travel Expenses
  * 
  * OUTLINE:
- * Proposed structure
- * 
  * main.c: accepts input, calls functions from other files, prints output
  * 
  * travelTime.c: asks for and returns:
@@ -40,7 +38,15 @@
  *  - Number of days need to be 1 or greater
  *  - Times for departure and arrival must be valid
  * 
- * TODO: Functions in the files should return total expenses and allowable expenses for everything
+ * Allowed expenses:
+ *  - Parking: $6 / day
+ *  - Taxi fees: $10 / day for each day a taxi was used
+ *  - Lodging: $90 / day
+ *  - Allowable meals: breakfast / lunch / dinner, $9 / $12, $16
+ * 
+ * Assuming allowed costs are compounded:
+ *  - Static allowed cost: $96 / day
+ *  - Taxi / meals: only when applicable 
  */
 #include "travelTime.h"
 #include "mealExpenses.h"
@@ -50,6 +56,9 @@
 
 // Calls all the functions to calculate total expenses
 int main() {
+    // Variable definitions
+    const int ALLOWED_COST_PER_DAY = 96;
+
     float totalCost = 0;
     float allowedCost = 0;
     float totalMealCost = 0;
