@@ -11,16 +11,12 @@
  */
 
 #include <stdio.h>
+#include "vehicleExpenses.h"
 
-int main()
+// Asking User to input a variable for Airfare and if that vairbale is negative it will ask again
+// for a postive number using Do/While and If Statements
+float getAirfare(float airfare)
 {
-
-    // The Variables for Airfare, Car Rental, Miles, Parking Fees, and Taxis entered as float
-    float airfare, rental, miles, fees, taxi;
-    float days, owedFees, tOwedFees;
-
-    // Asking User to input a variable and if that vairbale is negative it will ask again
-    // for a postive number using Do/While and If Statements
     do
     {
         printf("Total Spent on Airfare: $");
@@ -31,11 +27,16 @@ int main()
 
     } while (airfare < 0);
 
-    // Asking User to input a variable and if that vairbale is negative it will ask again
-    // for a postive number using Do/While and If Statements
+    return airfare;
+}
+
+// Asking User to input a variable for Car Rental and if that vairbale is negative it will ask again
+// for a postive number using Do/While and If Statements
+float getRental(float rental)
+{
     do
     {
-        printf("Total Spent on Car Rental: $");
+        printf("Total Spent on Rental: $");
         scanf("%f", &rental);
 
         if (rental < 0)
@@ -43,8 +44,13 @@ int main()
 
     } while (rental < 0);
 
-    // Asking User to input a variable and if that vairbale is negative it will ask again
-    // for a postive number using Do/While and If Statements
+    return rental;
+}
+
+// Asking User to input a variable for Miles and if that vairbale is negative it will ask again
+// for a postive number using Do/While and If Statements
+float getMiles(float miles, float tMiles)
+{
     do
     {
         printf("Total Miles Driven: $");
@@ -54,22 +60,30 @@ int main()
             printf("Please enter a Positive Number!\n");
 
     } while (miles < 0);
+    {
+        tMiles = miles * 0.27;
+    }
+    return tMiles;
+}
 
-    // Asking User to input a variable and if that vairbale is negative it will ask again
-    // for a postive number using Do/While and If Statements
+// Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
+// for a postive number using Do/While and If Statements
+float getFees(float totalFeeCost, float days)
+{
+
     do
     {
         printf("Total Spent on Parking: $");
-        scanf("%f", &fees);
+        scanf("%f", &totalFeeCost);
 
-        if (fees < 0)
+        if (totalFeeCost < 0)
             printf("Please enter a Positive Number!\n");
 
-    } while (fees < 0);
+    } while (totalFeeCost < 0);
 
     do
     {
-        printf("Total Days on Parking: ");
+        printf("Total Days on Parking:");
         scanf("%f", &days);
 
         if (days < 0)
@@ -77,23 +91,31 @@ int main()
 
     } while (days < 0);
 
-    owedFees = fees - (6 * days);
+    //  allowed = days * 6;
+    //  owed = total - (6 * days);
 
-    // Asking User to input a variable and if that vairbale is negative it will ask again
-    // for a postive number using Do/While and If Statements
+    return totalFeeCost;
+}
+
+// Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
+// for a postive number using Do/While and If Statements
+void getTaxi(float *totalTaxiCost, float *totalTaxiAllowed)
+{
+    float tTotal, tOwed, days, tAllowed;
+
     do
     {
         printf("Total Spent on Taxi: $");
-        scanf("%f", &taxi);
+        scanf("%f", &tTotal);
 
-        if (taxi < 0)
+        if (tTotal < 0)
             printf("Please enter a Positive Number!\n");
 
-    } while (taxi < 0);
+    } while (tTotal < 0);
 
     do
     {
-        printf("Total Days on Taxi: ");
+        printf("Total Days Taxi was used:");
         scanf("%f", &days);
 
         if (days < 0)
@@ -101,41 +123,8 @@ int main()
 
     } while (days < 0);
 
-    tOwedFees = taxi - (10 * days);
+    tAllowed = days * 10;
 
-    float mTotal;
-
-    // Multiplying the miles driven by .27 to get the total cost
-    mTotal = miles * 0.27;
-
-    printf("-------------------------------------------\n");
-
-    // Printing out all of the total costs
-    printf("\nTotal Airfare: $%.2f", airfare);
-    printf("\nTotal Car Rental: $%.2f", rental);
-    printf("\nTotal Miles Cost: $%.2f", mTotal);
-
-    printf("\nTotal Parking Fees: $%.2f", fees);
-
-    if (owedFees <= 0)
-    {
-        printf("\nTotal Parking Fees Owed: None");
-    }
-    else
-    { // if the first condition is not true, come to this block of code
-        printf("\nTotal Parking Fees Owed: $%.2f", owedFees);
-
-        printf("\nTotal Taxi Fees: $%.2f", taxi);
-
-        if (tOwedFees <= 0)
-        {
-            printf("\nTotal Taxi Fees Owed: None");
-        }
-        else
-        { // if the first condition is not true, come to this block of code
-            printf("\nTotal Taxi Fees Owed: $%.2f", tOwedFees);
-        }
-    }
-
-    return 0;
+    *totalTaxiAllowed = tAllowed;
+    *totalTaxiCost = tTotal;
 }
