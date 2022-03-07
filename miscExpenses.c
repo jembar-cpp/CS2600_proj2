@@ -3,7 +3,8 @@
  * miscExpenses.c: asks for and returns:
  *  - conference or seminar registration fees
  *  - total hotel expenses
- 
+*/
+
 #include <stdio.h>
 
 
