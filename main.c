@@ -80,8 +80,16 @@ int main() {
     calculateMealCosts(numDays,departureTime,arrivalTime,&totalMealCost,&allowedMealCost);
     totalCost += totalMealCost;
     allowedCost += allowedMealCost;
-    printf("%f, %f", totalMealCost, allowedMealCost);
+    
     // Print the results
-
+    float excess = _abs64(allowedCost - totalCost);
+    printf("\nTotal expenses for the trip: %.2f\n", totalCost);
+    printf("Total allowable expenses: %.2f\n", allowedCost);
+    if(totalCost < allowedCost) { // person didn't go over allowed total
+        printf("Within company-allowed total. Amount saved: %.2f\n", excess);
+    }
+    else { // person went over - needs to reimburse company
+        printf("Amount needing to be reimbursed: %.2f\n", excess);
+    }
     return 0;
 }
