@@ -50,8 +50,8 @@
 
 // Calls all the functions to calculate total expenses
 int main() {
-    float totalCost;
-    float allowedCost;
+    float totalCost = 0;
+    float allowedCost = 0;
     float totalMealCost = 0;
     float allowedMealCost = 0;
     // other variable definitions...
@@ -70,7 +70,7 @@ int main() {
     calculateMealCosts(numDays,departureTime,arrivalTime,&totalMealCost,&allowedMealCost);
     totalCost += totalMealCost;
     allowedCost += allowedMealCost;
-
+    printf("%f, %f", totalMealCost, allowedMealCost);
     // Print the results
 
     return 0;
