@@ -34,5 +34,4 @@ void getHotelExpenses(float hotelFee, int nights, float semFee)
     {  
         totalHotelExpenses = semFee;
     }
-    return 0;
 }
