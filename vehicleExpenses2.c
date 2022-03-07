@@ -36,7 +36,7 @@ float getRental(float rental)
 {
     do
     {
-        printf("Total Spent on Airfare: $");
+        printf("Total Spent on Rental: $");
         scanf("%f", &rental);
 
         if (rental < 0)
@@ -53,7 +53,7 @@ float getMiles(float miles, float tMiles)
 {
     do
     {
-        printf("Total Spent on Airfare: $");
+        printf("Total Miles Driven: $");
         scanf("%f", &miles);
 
         if (miles < 0)
@@ -108,7 +108,7 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
 
     do
     {
-        printf("Total Spent on Parking: $");
+        printf("Total Spent on Taxi: $");
         scanf("%f", &tTotal);
 
         if (tTotal < 0)
@@ -118,7 +118,7 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
 
     do
     {
-        printf("Total Days on Parking:");
+        printf("Total Days Taxi was used:");
         scanf("%f", &days);
 
         if (days < 0)
