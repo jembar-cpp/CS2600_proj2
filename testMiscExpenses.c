@@ -7,7 +7,7 @@
 
 void setUp() {}
 void tearDown() {}
-void main(){}
+
 void testHotelFees()
 {
 
