@@ -39,7 +39,7 @@ void testGetAirfare()
 // for a postive number using Do/While and If Statements
 void testGetRental()
 {
-    float rental = 100; // hard coded input
+    float rental = 300; // hard coded input
 
     do
     {
