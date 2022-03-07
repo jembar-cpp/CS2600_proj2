@@ -33,26 +33,24 @@ int main()
 
     
     // Checks for hotelFee only, so rest of calcs are easier to check 
-    if (hotelFee < 90)
+    if (hotelFee <= 89.99)
     {
-        printf("total cost is less than allowed, so we saved: $%.2f", (allowedHotelCost - totalHotelCost));
+        totalSaved = allowedHotelCost - totalHotelCost;
+        printf("You saved: $%.2f\n", totalSaved);
+        printf("Total Cost with seminar: $%.2f\n", (totalSaved + semFee));
     }
-    else if (hotelFee > 90)
+    else if (hotelFee >= 90.99)
     {
-        printf("total cost is more than allowed, so we over spent: $%.2f", (totalHotelCost - allowedHotelCost));
+        totalExcess = fabs(totalHotelCost - allowedHotelCost);
+        printf("total cost is more than allowed, so we over spent: $%.2f\n", totalExcess);
+        printf("Total Cost with seminar: $%.2f\n", (totalExcess + semFee));
     }
     else
     {  
-        printf("The company gave you the exact amount you needed! (for hotels)");
+        printf("The company gave you the exact amount you needed! (for hotels)\n");
+        printf("Total Cost for hotel and seminar: $%.2f\n", semFee);
     }
     
-    // Saves total saved/excess to variables for easy access
-    totalSaved = allowedHotelCost - totalHotelCost;
-    totalExcess = totalHotelCost - allowedHotelCost;
     
-    printf("Total saved: $%.2f", totalSaved);
-    printf("Total Excess = ");
-
-
     return 0;
 }
