@@ -15,7 +15,6 @@ void testHotelFees()
     float totalHotelCost, allowedHotelCost, testCost;
     float nights = 5;
     float hotelFee = 85.0;
-    float semFee = 150.0; 
     float allowedPerNight = 90;
 
     // Calculates costs of both allowed total and total businessperson spent
@@ -26,17 +25,23 @@ void testHotelFees()
     // Checks for hotelFee only, so rest of calcs are easier to check 
     if (hotelFee <= 89.99)
     {
-        testCost = (totalHotelCost - allowedHotelCost) + semFee;
+        testCost = (allowedHotelCost - totalHotelCost);
     }
     else if (hotelFee >= 90.99)
     {
-        testCost = (totalHotelCost - allowedHotelCost) + semFee;
+        testCost = (totalHotelCost - allowedHotelCost);
     }
     else
     {  
-        testCost = semFee;
+        testCost = 0;
     }
 
-    TEST_ASSERT_EQUAL(testCost, 125);
+    TEST_ASSERT_EQUAL(testCost, 25);
+}
+
+void testSemFee()
+{
+    float semFee = 150.0; 
+    TEST_ASSERT_EQUAL(semFee, 150);
 }
 
