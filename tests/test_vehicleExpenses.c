@@ -11,7 +11,7 @@
  */
 
 #include <stdio.h>
-#include "unity/src/unity.h"
+#include "../unity/src/unity.h"
 
 void setUp() {}
 
@@ -76,73 +76,6 @@ void testGetMiles()
     TEST_ASSERT_EQUAL(tMiles, 40.5);
 }
 
-/* // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
-// for a postive number using Do/While and If Statements
-void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
-{
-    float total, owed, days, allowed;
-
-    do
-    {
-        printf("Total Spent on Parking: $");
-        scanf("%f", &total);
-
-        if (total < 0)
-            printf("Please enter a Positive Number!\n");
-
-    } while (total < 0);
-
-    do
-    {
-        printf("Total Days on Parking:");
-        scanf("%f", &days);
-
-        if (days < 0)
-            printf("Please enter a Positive Number!\n");
-
-    } while (days < 0);
-
-    allowed = days * 6;
-    owed = total - (6 * days);
-
-    *totalFeeAllowed = allowed;
-    *totalFeeCost = total;
-    *owedFeeCost = owed;
-}
-
-// Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
-// for a postive number using Do/While and If Statements
-void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
-{
-    float tTotal, tOwed, days, tAllowed;
-
-    do
-    {
-        printf("Total Spent on Parking: $");
-        scanf("%f", &tTotal);
-
-        if (tTotal < 0)
-            printf("Please enter a Positive Number!\n");
-
-    } while (tTotal < 0);
-
-    do
-    {
-        printf("Total Days on Parking:");
-        scanf("%f", &days);
-
-        if (days < 0)
-            printf("Please enter a Positive Number!\n");
-
-    } while (days < 0);
-
-    tAllowed = days * 10;
-    tOwed = tTotal - (10 * days);
-
-    *totalTaxiAllowed = tAllowed;
-    *totalTaxiCost = tTotal;
-    *owedTaxiCost = tOwed;
-} */
 int main()
 {
     UNITY_BEGIN();

@@ -15,8 +15,9 @@
 
 // Asking User to input a variable for Airfare and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getAirfare(float airfare)
+float getAirfare()
 {
+    float airfare;
     do
     {
         printf("Total Spent on Airfare: $");
@@ -32,8 +33,9 @@ float getAirfare(float airfare)
 
 // Asking User to input a variable for Car Rental and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getRental(float rental)
+float getRental()
 {
+    float rental;
     do
     {
         printf("Total Spent on Rental: $");
@@ -49,8 +51,9 @@ float getRental(float rental)
 
 // Asking User to input a variable for Miles and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getMiles(float miles, float tMiles)
+float getMiles()
 {
+    float miles;
     do
     {
         printf("Total Miles Driven: $");
@@ -60,17 +63,16 @@ float getMiles(float miles, float tMiles)
             printf("Please enter a Positive Number!\n");
 
     } while (miles < 0);
-    {
-        tMiles = miles * 0.27;
-    }
+
+    float tMiles = miles * 0.27;
     return tMiles;
 }
 
 // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getFees(float totalFeeCost, float days)
+float getFees()
 {
-
+    float totalFeeCost;
     do
     {
         printf("Total Spent on Parking: $");
@@ -81,19 +83,6 @@ float getFees(float totalFeeCost, float days)
 
     } while (totalFeeCost < 0);
 
-    do
-    {
-        printf("Total Days on Parking:");
-        scanf("%f", &days);
-
-        if (days < 0)
-            printf("Please enter a Positive Number!\n");
-
-    } while (days < 0);
-
-    //  allowed = days * 6;
-    //  owed = total - (6 * days);
-
     return totalFeeCost;
 }
 
@@ -101,7 +90,7 @@ float getFees(float totalFeeCost, float days)
 // for a postive number using Do/While and If Statements
 void getTaxi(float *totalTaxiCost, float *totalTaxiAllowed)
 {
-    float tTotal, tOwed, days, tAllowed;
+    float tTotal, days, tAllowed;
 
     do
     {
@@ -115,7 +104,7 @@ void getTaxi(float *totalTaxiCost, float *totalTaxiAllowed)
 
     do
     {
-        printf("Total Days Taxi was used:");
+        printf("Total Days Taxi was used: ");
         scanf("%f", &days);
 
         if (days < 0)
