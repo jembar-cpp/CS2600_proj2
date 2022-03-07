@@ -68,9 +68,9 @@ float getMiles(float miles, float tMiles)
 
 // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getFees(float *totalFeeCost, float *owedFeeCost)
+void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
 {
-    float total, owed, days;
+    float total, owed, days, allowed;
 
     do
     {
@@ -92,17 +92,19 @@ void getFees(float *totalFeeCost, float *owedFeeCost)
 
     } while (days < 0);
 
+    allowed = days * 6;
     owed = total - (6 * days);
 
+    *totalFeeAllowed = allowed;
     *totalFeeCost = total;
     *owedFeeCost = owed;
 }
 
 // Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getTaxi(float *totalTaxiCost, float *owedTaxiCost)
+void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
 {
-    float tTotal, tOwed, days;
+    float tTotal, tOwed, days, tAllowed;
 
     do
     {
@@ -124,8 +126,10 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost)
 
     } while (days < 0);
 
+    tAllowed = days * 10;
     tOwed = tTotal - (10 * days);
 
+    *totalTaxiAllowed = tAllowed;
     *totalTaxiCost = tTotal;
     *owedTaxiCost = tOwed;
 }
