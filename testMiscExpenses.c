@@ -26,17 +26,17 @@ void testHotelFees()
     // Checks for hotelFee only, so rest of calcs are easier to check 
     if (hotelFee <= 89.99)
     {
-        testCost = (allowedHotelCost - totalHotelCost) + semFee;
+        testCost = (totalHotelCost - allowedHotelCost) + semFee;
     }
     else if (hotelFee >= 90.99)
     {
-        testCost = fabs(totalHotelCost - allowedHotelCost) + semFee;
+        testCost = (totalHotelCost - allowedHotelCost) + semFee;
     }
     else
     {  
         testCost = semFee;
     }
 
-    TEST_ASSERT_EQUAL(testCost, 175);
+    TEST_ASSERT_EQUAL(testCost, 125);
 }
 
