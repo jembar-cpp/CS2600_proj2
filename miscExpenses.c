@@ -51,7 +51,7 @@ int main()
     totalExcess = totalHotelCost - allowedHotelCost;
     
     printf("Total saved: $%.2f", totalSaved);
-    printf("Total Excess = ")
+    printf("Total Excess = ");
 
 
     return 0;
