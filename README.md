@@ -1,6 +1,9 @@
 # CS2600 - Project 2
 Travel Expenses - Group project
 
+The executable BusinessExpenses.exe is pre-compiled and can be used to run the program.
+
+
 **How to complile multiple files together:**
 
 Compile both files individually first:
