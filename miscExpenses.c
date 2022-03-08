@@ -31,7 +31,7 @@ float getSemFee()
 {
     float semFee;
     printf("Enter seminar/conference fees: ");
-    scanf("%.2f", &semFee);
+    scanf("%f", &semFee);
 
     while (semFee < 0) {
         printf("Enter valid seminal/conference fees: $%f");
