@@ -85,10 +85,10 @@ void modifiedCalculateMealCosts(int numDays, int departureTime, int arrivalTime,
 
 // Tests two versions: one with dollar sign added, one without dollar sign.
 void testPromptCost() {
-    freopen("test_mealExpenses_input/cost.txt", "r", stdin); // change standard input method
+    freopen("./tests/inputs/cost.txt", "r", stdin); // change standard input method
     float cost = promptCost();
     TEST_ASSERT_EQUAL(cost, 7.50);
-    freopen("test_mealExpenses_input/cost2.txt", "r", stdin);
+    freopen("./tests/inputs/cost2.txt", "r", stdin);
     cost = promptCost();
     TEST_ASSERT_EQUAL(cost, 12);
 }
@@ -97,7 +97,6 @@ void testCalculateMealCosts() {
     float totalMealCost = 0;
     float allowedMealCost = 0;
     modifiedCalculateMealCosts(3,900,1200,&totalMealCost,&allowedMealCost);
-    printf("%f, %f", totalMealCost, allowedMealCost);
     TEST_ASSERT_EQUAL(totalMealCost, 77.5);
     TEST_ASSERT_EQUAL(allowedMealCost, 74);
 }

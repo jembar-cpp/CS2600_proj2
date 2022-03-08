@@ -33,12 +33,12 @@ float getAirfare()
 
 // Asking User to input a variable for Car Rental and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getRental()
+float getCarRental()
 {
     float rental;
     do
     {
-        printf("Total Spent on Rental: $");
+        printf("Total Spent on Car Rental: $");
         scanf("%f", &rental);
 
         if (rental < 0)
@@ -56,7 +56,7 @@ float getMiles()
     float miles;
     do
     {
-        printf("Total Miles Driven: $");
+        printf("Total Miles Driven: ");
         scanf("%f", &miles);
 
         if (miles < 0)
@@ -70,20 +70,20 @@ float getMiles()
 
 // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getFees()
+float getParkingFees()
 {
-    float totalFeeCost;
+    float parkingFees;
     do
     {
         printf("Total Spent on Parking: $");
-        scanf("%f", &totalFeeCost);
+        scanf("%f", &parkingFees);
 
-        if (totalFeeCost < 0)
+        if (parkingFees < 0)
             printf("Please enter a Positive Number!\n");
 
-    } while (totalFeeCost < 0);
+    } while (parkingFees < 0);
 
-    return totalFeeCost;
+    return parkingFees;
 }
 
 // Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
