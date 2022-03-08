@@ -33,6 +33,7 @@
 void calculateMealCosts(int numDays, int departureTime, int arrivalTime, float *totalMealCost, float *allowableMealCost) {
     float total = 0, allowable = 0, cost;
 
+    fflush(stdin);
     for(int day = 1; day <= numDays; day++) { // loop through each day
         if(numDays == 1) { // special case: 1-day trip
             if(departureTime < 700 && arrivalTime > 800) { // breakfast is allowed
