@@ -1,6 +1,7 @@
 #ifndef MISCEXPENSES_H
-#define MISCExpenses_H
+#define MISCEXPENSES_H
 
-void calculateHotelCost(float hotelFee, int nights, float semFee)
+float getHotelExpenses();
+float getSemFee();
 
 #endif

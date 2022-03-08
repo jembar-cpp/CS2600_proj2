@@ -3,29 +3,26 @@
  * miscExpenses.c: asks for and returns:
  *  - conference or seminar registration fees
  *  - total hotel expenses
-*/
+ */
 
 #include <stdio.h>
-
-
 
 float getHotelExpenses()
 {
 
     float hotelFee;
-    
+
     printf("Enter hotel cost per night: $");
     scanf("%f", &hotelFee);
-    
-    while(hotelFee < 0) {
+
+    while (hotelFee < 0)
+    {
         printf("Enter valid cost: $", hotelFee);
         scanf("%f", &hotelFee);
     }
 
     return hotelFee;
 }
-    
-    
 
 float getSemFee()
 {
@@ -33,12 +30,11 @@ float getSemFee()
     printf("Enter seminar/conference fees: ");
     scanf("%f", &semFee);
 
-    while (semFee < 0) {
+    while (semFee < 0)
+    {
         printf("Enter valid seminal/conference fees: $%f");
         scanf("%f", &semFee);
     }
 
     return semFee;
 }
-
-
