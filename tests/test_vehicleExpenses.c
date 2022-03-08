@@ -1,6 +1,6 @@
 /**
  * @file VehicleExpenses.c
- * @author Conner Ramirez
+ * @author Conner Ramirez & Kendall Jones
  *
  *  * vehicleExpenses.c: asks for and returns:
  *  - total amount spent on round-trip airfare
