@@ -1,6 +1,6 @@
 /**
  * @file VehicleExpenses.c
- * @author Conner Ramirez
+ * @author Conner Ramirez & Kendall Jones
  *
  *  * vehicleExpenses.c: asks for and returns:
  *  - total amount spent on round-trip airfare
@@ -11,72 +11,86 @@
  */
 
 #include <stdio.h>
-#include "vehicleExpenses.h"
+#include "../unity/src/unity.h"
 
+void setUp() {}
+
+void tearDown() {}
 // Asking User to input a variable for Airfare and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-/*float getAirfare(float airfare)
+/*void testGetAirfare()
 {
+    float airfare = 100; // hard coded input
+
     do
     {
         printf("Total Spent on Airfare: $");
-        scanf("%f", &airfare);
+        printf("%.2f", airfare);
 
         if (airfare < 0)
             printf("Please enter a Positive Number!\n");
 
     } while (airfare < 0);
 
-    return airfare;
+    TEST_ASSERT_EQUAL(airfare, 100);
 }
 
 // Asking User to input a variable for Car Rental and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getRental(float rental)
+void testGetRental()
 {
+    float rental = 300; // hard coded input
+
     do
     {
         printf("Total Spent on Rental: $");
-        scanf("%f", &rental);
+        printf("%.2f", rental);
 
         if (rental < 0)
             printf("Please enter a Positive Number!\n");
 
     } while (rental < 0);
 
-    return rental;
+    TEST_ASSERT_EQUAL(rental, 300);
 }
 
 // Asking User to input a variable for Miles and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-float getMiles(float miles, float tMiles)
+void testGetMiles()
 {
+    float miles = 150;
+    float tMiles; // hard coded input
     do
     {
         printf("Total Miles Driven: $");
-        scanf("%f", &miles);
+
+        printf("%.2f", miles);
 
         if (miles < 0)
             printf("Please enter a Positive Number!\n");
 
     } while (miles < 0);
-    {
-        tMiles = miles * 0.27;
-    }
-    return tMiles;
-}
-*/
 
+    tMiles = miles * 0.27;
+
+    TEST_ASSERT_EQUAL(tMiles, 40.5);
+}*/
+
+<<<<<<< HEAD:test_vehicleExpenses.c
  // Asking User to input a variable for Parking Fees and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
+void testerGetFees()
 {
-    float total, owed, days, allowed;
+    float total= 100; //hardcoded
+    float owed;
+    float days= 5;  //hardcoded
+    float allowed;
 
     do
     {
         printf("Total Spent on Parking: $");
-        scanf("%f", &total);
+
+        printf("%.2f", total);
 
         if (total < 0)
             printf("Please enter a Positive Number!\n");
@@ -86,7 +100,8 @@ void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
     do
     {
         printf("Total Days on Parking:");
-        scanf("%f", &days);
+    
+        printf("%.2f", days);
 
         if (days < 0)
             printf("Please enter a Positive Number!\n");
@@ -96,21 +111,27 @@ void getFees(float *totalFeeCost, float *owedFeeCost, float *totalFeeAllowed)
     allowed = days * 6;
     owed = total - (6 * days);
 
-    *totalFeeAllowed = allowed;
-    *totalFeeCost = total;
-    *owedFeeCost = owed;
+
+TEST_ASSERT_EQUAL(allowed, 30);
+TEST_ASSERT_EQUAL(owed, 70);
+
 }
+
+
 
 // Asking User to input a variable for Taxi and if that vairbale is negative it will ask again
 // for a postive number using Do/While and If Statements
-void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
+void testGetTaxi()
 {
-    float tTotal, tOwed, days, tAllowed;
+    float tTotal=500;//hardcoded
+    float tOwed; 
+    float days=4; //hardcoded
+    float tAllowed;
 
     do
     {
         printf("Total Spent on Taxi: $");
-        scanf("%f", &tTotal);
+         printf("%.2f", tTotal);
 
         if (tTotal < 0)
             printf("Please enter a Positive Number!\n");
@@ -120,7 +141,7 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
     do
     {
         printf("Total Days Taxi was used:");
-        scanf("%f", &days);
+         printf("%.2f", days);
 
         if (days < 0)
             printf("Please enter a Positive Number!\n");
@@ -130,7 +151,19 @@ void getTaxi(float *totalTaxiCost, float *owedTaxiCost, float *totalTaxiAllowed)
     tAllowed = days * 10;
     tOwed = tTotal - (10 * days);
 
-    *totalTaxiAllowed = tAllowed;
-    *totalTaxiCost = tTotal;
-    *owedTaxiCost = tOwed;
+
+    TEST_ASSERT_EQUAL(tAllowed, 40);
+    TEST_ASSERT_EQUAL(tOwed, 460);
+}
+=======
+>>>>>>> 190b3297cd51058a9ba3d5b5197a713a16abae43:tests/test_vehicleExpenses.c
+int main()
+{
+    UNITY_BEGIN();
+    //RUN_TEST(testGetAirfare);
+    //RUN_TEST(testGetRental);
+    //RUN_TEST(testGetMiles);
+    RUN_TEST(testerGetFees);
+    RUN_TEST(testGetTaxi);
+    return UNITY_END();
 }

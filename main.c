@@ -1,27 +1,26 @@
 /** main.c
  * CS 2600 Project 2 (Group) - Travel Expenses
- *
- * OUTLINE:
- * Proposed structure
- *
- * main.c: accepts input, calls functions from other files, prints output
- *
+ * 
+ * Calculates and displays the total travel expenses of a businessperson on a trip.
+ * 
+ * File structure:
+ * 
  * travelTime.c: asks for and returns:
  *  - the number of days spent on the trip
  *  - the departure time on the first day
  *  - the arrival time on the last day
- *
+ * 
  * vehicleExpenses.c: asks for and returns:
  *  - total amount spent on round-trip airfare
  *  - total amount of any car rentals
- *  - miles driven in a private vehicle (returns amount: miles * $0.27)
+ *  - miles driven in a private vehicle
  *  - parking fees
  *  - taxi expenses
- *
+ * 
  * miscExpenses.c: asks for and returns:
  *  - conference or seminar registration fees
  *  - total hotel expenses
- *
+ * 
  * mealExpenses.c: asks for, calculates expenses for, and returns:
  *  - amount for each allowable meal eaten (program only asks for allowable meals):
  *    - a meal is "allowable" only during the trip, such that:
@@ -33,12 +32,50 @@
  *      - last day: dinner allowed if time of arrival is after 7PM
  *  - calculate the excess expenses which must be paid:
  *    - company allows $9 for breakfast, $12 for lunch, and $16 for dinner
- *    - returned values should be the total expenses, allowable expenses, and excess expenses
- *
- * Input validation:
- *  - No negative numbers
- *  - Number of days need to be 1 or greater
- *  - Times for departure and arrival must be valid
- *
- * TODO: Functions in the files should return total expenses and allowable expenses for everything
+ * 
  */
+#include "travelTime.h"
+#include "mealExpenses.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Calls all the functions to calculate total expenses
+int main() {
+    // Variable definitions
+    const int ALLOWED_COST_PER_DAY = 96;
+
+    float totalCost = 0;
+    float allowedCost = 0;
+    float totalMealCost = 0;
+    float allowedMealCost = 0;
+    // other variable definitions...
+    
+    // TODO: functions should be called in this order
+    int numDays = getNumDays();
+    allowedCost += numDays * ALLOWED_COST_PER_DAY; // set static allowed cost based on number of days
+    int departureTime = getDepartureTime();
+    int arrivalTime = getArrivalTime(departureTime, numDays);
+    // get amount of any round-trip airfare
+    // get amount of any car rentals
+    // get amount of miles driven in private vehicle
+    // get parking fees
+    // get taxi fees
+    // get conference and seminar registration fees
+    // get hotel expenses
+    calculateMealCosts(numDays,departureTime,arrivalTime,&totalMealCost,&allowedMealCost);
+    totalCost += totalMealCost;
+    allowedCost += allowedMealCost;
+    
+    // Print the results
+    float excess = _abs64(allowedCost - totalCost);
+    printf("\nTotal expenses for the trip: %.2f\n", totalCost);
+    printf("Total allowable expenses: %.2f\n", allowedCost);
+    if(totalCost < allowedCost) { // person didn't go over allowed total
+        printf("Within company-allowed total. Amount saved: %.2f\n", excess);
+    }
+    else { // person went over - needs to reimburse company
+        printf("Amount needing to be reimbursed: %.2f\n", excess);
+    }
+    return 0;
+}
