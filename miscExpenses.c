@@ -17,7 +17,7 @@ float getHotelExpenses()
 
     while (hotelFee < 0)
     {
-        printf("Enter valid cost: $", hotelFee);
+        printf("Enter valid cost: $");
         scanf("%f", &hotelFee);
     }
 
@@ -32,7 +32,7 @@ float getSemFee()
 
     while (semFee < 0)
     {
-        printf("Enter valid seminal/conference fees: $%f");
+        printf("Enter valid seminal/conference fees: $");
         scanf("%f", &semFee);
     }
 

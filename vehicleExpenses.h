@@ -2,9 +2,9 @@
 #define VEHICLEEXPENSES_H
 
 float getAirfare();
-float getRental();
+float getCarRental();
 float getMiles();
-float getFees();
+float getParkingFees();
 void getTaxi(float *totalTaxiCost, float *totalTaxiAllowed);
 
 #endif

@@ -32,10 +32,11 @@
  *      - last day: dinner allowed if time of arrival is after 7PM
  *  - calculate the excess expenses which must be paid:
  *    - company allows $9 for breakfast, $12 for lunch, and $16 for dinner
- * 
  */
-#include "travelTime.h"
 #include "mealExpenses.h"
+#include "miscExpenses.h"
+#include "travelTime.h"
+#include "vehicleExpenses.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,28 +45,33 @@
 int main() {
     // Variable definitions
     const int ALLOWED_COST_PER_DAY = 96;
-
     float totalCost = 0;
     float allowedCost = 0;
-    float totalMealCost = 0;
-    float allowedMealCost = 0;
-    // other variable definitions...
+    float totalPtr, allowedPtr;
     
-    // TODO: functions should be called in this order
+    // Get details of trip length and allowance of businessperson
     int numDays = getNumDays();
     allowedCost += numDays * ALLOWED_COST_PER_DAY; // set static allowed cost based on number of days
     int departureTime = getDepartureTime();
     int arrivalTime = getArrivalTime(departureTime, numDays);
-    // get amount of any round-trip airfare
-    // get amount of any car rentals
-    // get amount of miles driven in private vehicle
-    // get parking fees
-    // get taxi fees
-    // get conference and seminar registration fees
-    // get hotel expenses
-    calculateMealCosts(numDays,departureTime,arrivalTime,&totalMealCost,&allowedMealCost);
-    totalCost += totalMealCost;
-    allowedCost += allowedMealCost;
+
+    // Get vehicle expenses
+    totalCost += getAirfare();
+    totalCost += getCarRental();
+    totalCost += getMiles();
+    totalCost += getParkingFees();
+    getTaxi(&totalPtr, &allowedPtr);
+    totalCost += totalPtr;
+    allowedCost += allowedPtr;
+
+    // Get miscellaneous expenses
+    totalCost += getHotelExpenses() * numDays;
+    totalCost += getSemFee();
+    
+    // Get meal costs
+    calculateMealCosts(numDays,departureTime,arrivalTime,&totalPtr,&allowedPtr);
+    totalCost += totalPtr;
+    allowedCost += allowedPtr;
     
     // Print the results
     float excess = _abs64(allowedCost - totalCost);
