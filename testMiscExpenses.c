@@ -12,7 +12,7 @@ void testHotelFees()
 {
     float hotelFee = 50;
 
-    TEST_ASSERT_EQUAL(testCost, 50);
+    TEST_ASSERT_EQUAL(hotelFee, 50);
 }
 
 void testSemFee()
